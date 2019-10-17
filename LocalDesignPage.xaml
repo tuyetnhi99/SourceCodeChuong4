@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamlExamples.LocalDesignPage">
+    <Grid Padding="30" Margin="30" BackgroundColor="#AAAAAA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Entry x:Name="subject" Placeholder="Subject" Grid.Row="0" TextColor="Navy" FontAttributes="Italic"/>
+        <Editor x:Name="Feedback" Grid.Row="1" Placeholder="Type your message here" 
+                BackgroundColor="Silver" TextColor="Navy" FontAttributes="Italic"/>
+        <StackLayout Orientation="Vertical" Grid.Row="2">
+            <Button Text="Cancel" TextColor="White" FontAttributes="Bold" BackgroundColor="#4CAF50"/>
+            <Button Text="Submit" TextColor="White" FontAttributes="Bold" BackgroundColor="#f47442"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamlExamples.StaticResourcesPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackground">#AAAAAA</Color>
+            <Style x:Key="TextEditor" TargetType="Editor">
+                <Setter Property="TextColor" Value="Navy"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+            <Style x:Key="TextEntry" TargetType="Entry">
+                <Setter Property="TextColor" Value="Navy"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+            </Style>
+            <Style x:Key="Buttons" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+            <Color x:Key="PossitiveColor">#f47442</Color>
+            <Color x:Key="NegativeColor">#4CAF50</Color>
+            <Color x:Key="InactiveColor">Gray</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid Padding="30" Margin="30" BackgroundColor="{StaticResource Key=PageBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Entry x:Name="subject" Placeholder="Subject" Grid.Row="0" 
+               Style="{StaticResource Key=TextEntry}"/>
+        <Editor x:Name="Feedback" Grid.Row="1" Placeholder="Type your message here" 
+                Style="{StaticResource Key=TextEditor}"/>
+        <StackLayout Orientation="Vertical" Grid.Row="2">
+            <Button Text="Cancel" Style="{StaticResource Buttons}" BackgroundColor="{StaticResource NegativeColor}"/>
+            <Button Text="Submit" Style="{StaticResource Buttons}" BackgroundColor="{StaticResource PossitiveColor}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
